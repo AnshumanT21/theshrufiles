@@ -35,6 +35,23 @@ body{
 
 a{ color: inherit; }
 
+/* hide the moon's Spotify player completely — clip to zero size so nothing can render visibly, regardless of what Spotify's own script sets on its injected iframe. transform + contain force this element to become the containing block for any fixed-position child, which is required to actually clip position:fixed content (plain overflow:hidden alone cannot). */
+#moon-audio-embed{
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  position: relative !important;
+  z-index: -1 !important;
+  transform: translateZ(0) !important;
+  contain: strict !important;
+}
+#moon-audio-embed iframe{
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+}
+
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 }
@@ -424,7 +441,11 @@ button{ font-family: inherit; cursor: none; }
 .card-matcha{ background: linear-gradient(160deg, var(--matcha-light), #BBDA9E); }
 .card-coffee{ background: linear-gradient(160deg, #EAD9C4, #D8BE9E); }
 .card-tiramisu{ background: linear-gradient(160deg, #F3E4C8, #E3C99B); }
-.flip-back{ background: var(--red); color: white; transform: rotateY(180deg); }
+.flip-back{ color: white; transform: rotateY(180deg); }
+.back-strawberry{ background: linear-gradient(160deg, var(--red), var(--red-dark)); }
+.back-matcha{ background: linear-gradient(160deg, var(--matcha), var(--matcha-dark)); }
+.back-coffee{ background: linear-gradient(160deg, #8A5A32, var(--coffee)); }
+.back-tiramisu{ background: linear-gradient(160deg, #C99B5E, #A9793C); }
 .flip-back p{ font-size: 14px; line-height: 1.5; text-align:center; margin:0; }
 
 @media (max-width: 760px){ .faves-grid{ grid-template-columns: repeat(2, 1fr); } }
@@ -613,15 +634,22 @@ button{ font-family: inherit; cursor: none; }
 .flower-title{ color: var(--gold); }
 .flower-sub{ font-family: var(--font-hand); font-size: 22px; opacity: 0.85; margin-top: -4px; }
 .flower-caption{ font-size: 20px; opacity: 0.85; }
+.flower-caption-yellow{ color: #F2C14E; }
 
 .moon-wrap{
   position: absolute;
   top: 6%;
   right: 10%;
   z-index: 1;
+  background: none;
+  border: none;
+  padding: 0;
   filter: drop-shadow(0 0 30px rgba(255,220,140,0.5)) drop-shadow(0 0 60px rgba(255,220,140,0.25));
   animation: moon-glow 5s ease-in-out infinite;
+  transition: transform 0.2s ease;
 }
+.moon-wrap:hover{ transform: scale(1.05); }
+.moon-wrap:active{ transform: scale(0.96); }
 @keyframes moon-glow{
   0%, 100%{ filter: drop-shadow(0 0 30px rgba(255,220,140,0.5)) drop-shadow(0 0 60px rgba(255,220,140,0.25)); }
   50%{ filter: drop-shadow(0 0 40px rgba(255,220,140,0.65)) drop-shadow(0 0 76px rgba(255,220,140,0.35)); }
@@ -825,6 +853,13 @@ button{ font-family: inherit; cursor: none; }
   overflow: hidden;
   box-shadow: 4px 4px 0 var(--red-dark);
 }
+.note-embed-wrap{
+  margin-top: 16px;
+  max-width: 340px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 3px 3px 0 var(--red-dark);
+}
 
 /* ============ NOTES CAROUSEL (photo left, message right) ============ */
 .notes-carousel{ display:flex; align-items:flex-start; gap: 20px; max-width: 1080px; margin: 0 auto; }
@@ -840,6 +875,39 @@ button{ font-family: inherit; cursor: none; }
   text-align: left;
 }
 .note-card.is-active{ opacity:1; transform: translateX(0); pointer-events:auto; }
+
+.note-photo-col{
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* stickers (placeholders — drop matching files into assets/) */
+.note-sticker{ display:block; }
+.note-sticker-tr{
+  position: absolute;
+  top: 220px; right: 15%;
+  width: 130px; height: auto;
+  transform: rotate(8deg);
+  z-index: 5;
+}
+.note-sticker-below-photo{
+  width: 160px; height: auto;
+  transform: rotate(-6deg);
+}
+.note-sticker-inline{
+  width: 22px; height: 22px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+#note-1-peter-sticker{
+  width: 30px; height: 30px;
+}
 
 .note-photo-wrap{
   position: relative;
@@ -901,6 +969,7 @@ button{ font-family: inherit; cursor: none; }
 
 @media (max-width: 700px){
   .note-card{ flex-direction: column; text-align:center; gap: 20px; }
+  .note-embed-wrap{ margin-left: auto; margin-right: auto; }
   .note-photo-wrap{ width: 200px; margin: 0 auto; }
   .notes-track{ min-height: 480px; }
 }

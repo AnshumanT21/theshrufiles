@@ -103,7 +103,7 @@
             <img class="fave-icon-img" src="assets/icons/strawberry.png" alt="Strawberry illustration">
             <h3>strawberries</h3>
           </div>
-          <div class="flip-back">
+          <div class="flip-back back-strawberry">
             <p>Will pick the strawberry off any dessert first. Non-negotiable. It's basically a personality trait at this point.</p>
           </div>
         </div>
@@ -115,7 +115,7 @@
             <img class="fave-icon-img" src="assets/icons/matcha.png" alt="Iced matcha illustration">
             <h3>matcha</h3>
           </div>
-          <div class="flip-back">
+          <div class="flip-back back-matcha">
             <p>Has opinions about whip ratio. Strong ones. Do not get her started unless you have twenty minutes.</p>
           </div>
         </div>
@@ -127,7 +127,7 @@
             <img class="fave-icon-img" src="assets/icons/latte.png" alt="Iced latte illustration">
             <h3>coffee</h3>
           </div>
-          <div class="flip-back">
+          <div class="flip-back back-coffee">
             <p>Coffee first, conversation second. This has been the rule since forever and it's not up for debate.</p>
           </div>
         </div>
@@ -139,7 +139,7 @@
             <img class="fave-icon-img" src="assets/icons/tiramisu.png" alt="Tiramisu illustration">
             <h3>tiramisu</h3>
           </div>
-          <div class="flip-back">
+          <div class="flip-back back-tiramisu">
             <p>The dessert menu test: if there's no tiramisu, is it even a real restaurant? She thinks not.</p>
           </div>
         </div>
@@ -204,7 +204,7 @@
 
   <div class="vinyl-row" id="vinyl-row">
     <button class="vinyl-item pos-up" data-track="2J051fjLklkoPbzOoTAACZ" data-title="Sally, When The Wine Runs Out — Role Model" aria-label="Preview Sally, When The Wine Runs Out">
-      <div class="vinyl"><div class="vinyl-label"><img src="assets/Sally.png" alt=""></div></div>
+      <div class="vinyl"><div class="vinyl-label"><img src="assets/sally.png" alt=""></div></div>
     </button>
     <button class="vinyl-item pos-down" data-track="2jAQzmhwPPcc6jBx4w664w" data-title="Deeply Still In Love — Role Model" aria-label="Preview Deeply Still In Love">
       <div class="vinyl"><div class="vinyl-label"><img src="assets/deeply.png" alt=""></div></div>
@@ -266,7 +266,7 @@
     <span class="sparkle-star" style="top:6%; left:55%; --size:13px; --delay:1.5s;"></span>
     <span class="sparkle-star" style="top:30%; left:88%; --size:12px; --delay:2.4s;"></span>
   </div>
-  <div class="moon-wrap" aria-hidden="true">
+  <button class="moon-wrap" id="moon-btn" aria-label="Press the moon to play a song">
     <svg class="moon" viewBox="0 0 200 200" width="130" height="130">
       <defs>
         <radialGradient id="moon-glow" cx="50%" cy="45%" r="60%">
@@ -283,12 +283,13 @@
       <circle cx="105" cy="95" r="6" fill="#E0B45A" opacity="0.45"/>
       <circle cx="55" cy="115" r="6" fill="#E0B45A" opacity="0.45"/>
     </svg>
-  </div>
+  </button>
+  <div id="moon-audio-embed" style="width:0; height:0; overflow:hidden; opacity:0; position:relative; z-index:-1; transform:translateZ(0); contain:strict;" aria-hidden="true"></div>
 
   <div class="section-inner flower-inner">
     <h2 class="section-title flower-title">a little magic, just because</h2>
     <p class="flower-sub">for the girl who still tears up at the floating lights scene</p>
-    <p class="flower-caption handwritten">make a wish before they drift out of sight</p>
+    <p class="flower-caption flower-caption-yellow handwritten">Press the moon and make a wish before they drift out of sight</p>
   </div>
 
   <div class="river-scene" id="river-scene">
@@ -389,28 +390,31 @@
 
 <!-- ===================== NOTES FROM HER PEOPLE ===================== -->
 <section id="notes" class="section">
+  <img class="note-sticker note-sticker-tr" id="spidey2-sticker" src="assets/spidey2.png" alt="" data-slot="spidey2">
   <div class="section-inner">
     <h2 class="section-title tilt-l center">notes from her people</h2>
     <p class="section-sub center">everyone who loves her had something to say</p>
-    <p class="song-caption handwritten center">the soundtrack for this part: "I Think I Like When It Rains" — WILLIS</p>
-    <div class="spotify-embed-wrap">
-      <iframe title="I Think I Like When It Rains by WILLIS on Spotify" src="https://open.spotify.com/embed/track/5S5u0EWtlblH00iTNExZ6X?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-    </div>
 
     <div class="notes-carousel">
       <button class="carousel-arrow left" id="notes-prev" aria-label="previous note">‹</button>
 
       <div class="notes-track" id="notes-track">
-        <!-- Note cards: duplicate this block per friend, swap photo/name/message -->
+        <!-- Note cards: duplicate this block per friend, swap photo/name/message/song -->
         <div class="note-card">
-          <div class="note-photo-wrap">
-            <div class="note-tape note-tape-l"></div>
-            <div class="note-tape note-tape-r"></div>
-            <div class="note-photo ph-slot" data-slot="note-1"><span>photo of<br>shruti + friend</span></div>
+          <div class="note-photo-col">
+            <div class="note-photo-wrap">
+              <div class="note-tape note-tape-l"></div>
+              <div class="note-tape note-tape-r"></div>
+              <div class="note-photo"><img src="assets/us.png" alt="Shruti and Anshie"></div>
+            </div>
+            <img class="note-sticker note-sticker-below-photo" src="assets/spidey1.png" alt="" data-slot="spidey1">
           </div>
           <div class="note-text">
-            <p class="note-message">"Add this friend's message about Shruti here — swap this placeholder text once you send it over."</p>
-            <p class="note-signature">— friend's name</p>
+            <p class="note-message">"Play that song first bitch, cause yes I am calling YOU a LOSER. But such an awesome loser. I can't even imagine how my life would be if on some random day in 11th you didn't adopt me and make me socialize with people. How my life would be now if I didn't join the photography club because of you or didn't have every single teacher scold us for sitting together, disturbing the class (we barely were ever there idk what's wrong with them). You are the most precious person to me and I don't think that will ever change. I love gossiping, judging and hating on people with you. Everytime anything at all happens and people say "You can't tell anyone", I just have to run to you and tell you the gossip cause how can I not. Thank you for being in my life and for everything you ever did and still do for me. (and for being the Gwen to my Peter Parker<img class="note-sticker-inline" src="assets/gwen.png" alt="" data-slot="gwen"><img class="note-sticker-inline" id="note-1-peter-sticker" src="assets/peter.png" alt="" data-slot="peter">)."</p>
+            <p class="note-signature">— Anshie</p>
+            <div class="note-embed-wrap">
+              <iframe title="Loser by Tame Impala on Spotify" src="https://open.spotify.com/embed/track/3RmFPuTTAjSQ2pbEd2j9oA?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
           </div>
         </div>
 
@@ -418,11 +422,14 @@
           <div class="note-photo-wrap">
             <div class="note-tape note-tape-l"></div>
             <div class="note-tape note-tape-r"></div>
-            <div class="note-photo ph-slot" data-slot="note-2"><span>photo of<br>shruti + friend</span></div>
+            <div class="note-photo"><img src="assets/kritiher.png" alt="Shruti and Kiki"></div>
           </div>
           <div class="note-text">
             <p class="note-message">"Shruti is the nicest but rudest person depending on what you deserve. If I could describe her in a word, I would actually just say &ldquo;home&rdquo;, not in a cliché way but because she is someone without whom I can't imagine even my ordinary days. Spending time with her feels like I'm returning to something very familiar. I wasn't the most public person but she made me want to tell the entire world how important and amazing she is. KMC wouldn't be KMC without her. Not to be cringe, but I would not just kill for her but she makes me want to breathe for her, and that says a lot in itself."</p>
             <p class="note-signature">— Kiki</p>
+            <div class="note-embed-wrap">
+              <iframe title="Flying Solo by Julie and the Phantoms Cast on Spotify" src="https://open.spotify.com/embed/track/2e3ZtFtjaPvcBgJy3xpXFT?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
           </div>
         </div>
 
@@ -435,6 +442,9 @@
           <div class="note-text">
             <p class="note-message">"Third one lives here. Add as many note-card blocks as you have friends."</p>
             <p class="note-signature">— friend's name</p>
+            <div class="note-embed-wrap">
+              <iframe title="Baburao by wolf.cryman, Culture Ghalib on Spotify" src="https://open.spotify.com/embed/track/26L2kWB0tWm4E1T3TLsgxd?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
           </div>
         </div>
       </div>
@@ -469,5 +479,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
 </body>
 </html>

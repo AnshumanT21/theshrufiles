@@ -319,6 +319,48 @@ document.querySelectorAll('[data-flip]').forEach(card => {
   });
 })();
 
+// ============ MOON: press to play a song, press again to stop (Spotify IFrame API) ============
+(function moonSong(){
+  const moonBtn = document.getElementById('moon-btn');
+  const embedContainer = document.getElementById('moon-audio-embed');
+  if(!moonBtn || !embedContainer) return;
+
+  let controller = null;
+  let isPlaying = false;
+  let pendingPlay = false;
+
+  window.onSpotifyIframeApiReady = (IFrameAPI) => {
+    const options = {
+      uri: 'spotify:track:71ThSwPHBegkD1Cj0G2cji', // Floated By — Peter Cat Recording Co.
+      width: '300',
+      height: '80'
+    };
+    IFrameAPI.createController(embedContainer, options, (EmbedController) => {
+      controller = EmbedController;
+      controller.addListener('playback_update', (e) => {
+        isPlaying = !e.data.isPaused;
+      });
+      if(pendingPlay){
+        controller.play();
+        pendingPlay = false;
+      }
+    });
+  };
+
+  moonBtn.addEventListener('click', () => {
+    if(!controller){
+      // API script still loading — play as soon as it's ready
+      pendingPlay = true;
+      return;
+    }
+    if(isPlaying){
+      controller.pause();
+    } else {
+      controller.play();
+    }
+  });
+})();
+
 // ============ LANTERN RIVER SCENE ============
 (function lanternRiver(){
   const scene = document.getElementById('river-scene');
@@ -378,6 +420,7 @@ document.querySelectorAll('[data-flip]').forEach(card => {
   const dotsWrap = document.getElementById('notes-dots');
   const prevBtn = document.getElementById('notes-prev');
   const nextBtn = document.getElementById('notes-next');
+  const spidey2 = document.getElementById('spidey2-sticker');
   let index = 0;
 
   cards.forEach((_, i) => {
@@ -395,6 +438,7 @@ document.querySelectorAll('[data-flip]').forEach(card => {
   function render(){
     cards.forEach((c, i) => c.classList.toggle('is-active', i === index));
     dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+    if(spidey2) spidey2.style.display = (index === 0) ? 'block' : 'none';
     updateHeight();
   }
   prevBtn.addEventListener('click', () => { index = (index - 1 + cards.length) % cards.length; render(); });
