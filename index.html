@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shruti Turns 20 🍓</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@400;500;600;700&family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Butterfly cursor -->
+<div id="butterfly-cursor" aria-hidden="true">
+  <svg viewBox="0 0 100 80" width="42" height="34">
+    <g id="wing-left">
+      <path d="M48 40 C 30 5, 0 5, 4 30 C 6 50, 30 52, 48 40 Z" fill="#F4A6C1" stroke="#B5342C" stroke-width="2"/>
+      <path d="M46 44 C 28 60, 6 58, 8 42 C 10 34, 30 34, 46 44 Z" fill="#FBD3E0" stroke="#B5342C" stroke-width="2"/>
+    </g>
+    <g id="wing-right">
+      <path d="M52 40 C 70 5, 100 5, 96 30 C 94 50, 70 52, 52 40 Z" fill="#F4A6C1" stroke="#B5342C" stroke-width="2"/>
+      <path d="M54 44 C 72 60, 94 58, 92 42 C 90 34, 70 34, 54 44 Z" fill="#FBD3E0" stroke="#B5342C" stroke-width="2"/>
+    </g>
+    <ellipse cx="50" cy="40" rx="3" ry="14" fill="#6B4423"/>
+  </svg>
+</div>
+
+<!-- floating sprinkles layer -->
+<div class="sprinkle-field" aria-hidden="true"></div>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero" class="section grid-paper">
+  <div class="washi washi-1"></div>
+  <div class="washi washi-2"></div>
+  <div class="tape tape-1"></div>
+  <div class="tape tape-2"></div>
+
+  <div class="sticker sticker-strawberry s1" aria-hidden="true"></div>
+  <div class="sticker sticker-matcha s2" aria-hidden="true"></div>
+  <div class="sticker sticker-strawberry s3" aria-hidden="true"></div>
+  <div class="sticker sticker-strawberry s4" aria-hidden="true"></div>
+
+  <div class="disco-ball disco-1" aria-hidden="true"></div>
+  <div class="disco-ball disco-2" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <p class="eyebrow">now serving · all day long</p>
+    <h1 class="hero-title">
+      <span class="hero-title-top">shruti's</span>
+      <span class="hero-title-main">TURNING 20</span>
+    </h1>
+    <p class="hero-quote">"life's too short for bad coffee, mediocre matcha,<br class="br-desktop"> and boring birthdays."</p>
+
+    <div class="countdown" id="countdown">
+      <div class="countdown-box"><span id="cd-days">--</span><small>days</small></div>
+      <div class="countdown-box"><span id="cd-hours">--</span><small>hrs</small></div>
+      <div class="countdown-box"><span id="cd-mins">--</span><small>min</small></div>
+      <div class="countdown-box"><span id="cd-secs">--</span><small>sec</small></div>
+    </div>
+    <p class="countdown-label">until she's officially 20 ✨</p>
+
+    <button id="coffee-btn" class="coffee-cup" aria-label="click the coffee cup">
+      <span class="steam s-a"></span>
+      <span class="steam s-b"></span>
+      <span class="steam s-c"></span>
+      ☕
+    </button>
+    <p class="coffee-hint">(psst. click the cup)</p>
+  </div>
+
+  <div class="polaroid p-hero p1"><div class="polaroid-photo"><img src="assets/Tongue.png" alt="Shruti making a face"></div><p>the tongue-out one, obviously</p></div>
+  <div class="polaroid p-hero p2"><div class="polaroid-photo"><img src="assets/soulchild.png" alt="Shruti, certified soul child"></div><p>certified soul child</p></div>
+
+  <div class="scroll-cue">keep scrolling, chaos ahead ↓</div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="section">
+  <div class="tape tape-3"></div>
+  <div class="section-inner about-inner">
+    <h2 class="section-title tilt-l">meet the birthday girl</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Shruti is the friend who orders the weirdest matcha combo on the menu, has already read the plot twist coming from a mile away, and somehow still gasps every time. She's turning <strong>20</strong>, which feels important, so we made her an entire chaotic little website about it. As one does.</p>
+        <p class="handwritten">she said "you didn't have to" — we absolutely did.</p>
+      </div>
+      <div class="polaroid p-about"><div class="polaroid-photo"><img src="assets/maincharacter.png" alt="Shruti, main character energy"></div><p>main character energy</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAVES GRID ===================== -->
+<section id="faves" class="section grid-paper-soft">
+  <div class="section-inner">
+    <h2 class="section-title tilt-r">her whole personality, basically</h2>
+    <p class="section-sub">(click a card. there's more than meets the eye)</p>
+
+    <div class="faves-grid">
+      <button class="flip-card" data-flip>
+        <div class="flip-inner">
+          <div class="flip-front card-strawberry">
+            <img class="fave-icon-img" src="assets/icons/strawberry.png" alt="Strawberry illustration">
+            <h3>strawberries</h3>
+          </div>
+          <div class="flip-back">
+            <p>Will pick the strawberry off any dessert first. Non-negotiable. It's basically a personality trait at this point.</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" data-flip>
+        <div class="flip-inner">
+          <div class="flip-front card-matcha">
+            <img class="fave-icon-img" src="assets/icons/matcha.png" alt="Iced matcha illustration">
+            <h3>matcha</h3>
+          </div>
+          <div class="flip-back">
+            <p>Has opinions about whip ratio. Strong ones. Do not get her started unless you have twenty minutes.</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" data-flip>
+        <div class="flip-inner">
+          <div class="flip-front card-coffee">
+            <img class="fave-icon-img" src="assets/icons/latte.png" alt="Iced latte illustration">
+            <h3>coffee</h3>
+          </div>
+          <div class="flip-back">
+            <p>Coffee first, conversation second. This has been the rule since forever and it's not up for debate.</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" data-flip>
+        <div class="flip-inner">
+          <div class="flip-front card-tiramisu">
+            <img class="fave-icon-img" src="assets/icons/tiramisu.png" alt="Tiramisu illustration">
+            <h3>tiramisu</h3>
+          </div>
+          <div class="flip-back">
+            <p>The dessert menu test: if there's no tiramisu, is it even a real restaurant? She thinks not.</p>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BOOKWORM ===================== -->
+<section id="book" class="section">
+  <div class="section-inner">
+    <h2 class="section-title tilt-l center">certified bookworm</h2>
+    <p class="section-sub center">give her a good book and she disappears for the rest of the day</p>
+
+    <div class="book-shelf">
+      <div class="book-doodle shelf-1">
+        <div class="book-spine"></div>
+        <div class="book-cover cover-agggtm">
+          <img class="book-cover-img" src="assets/guide.png" alt="">
+          <p class="book-eyebrow">currently obsessed with</p>
+          <p class="book-title">a good girl's<br>guide to murder</p>
+        </div>
+      </div>
+
+      <div class="book-doodle shelf-2">
+        <div class="book-spine"></div>
+        <div class="book-cover cover-achilles">
+          <img class="book-cover-img" src="assets/song.png" alt="">
+          <p class="book-title">the song<br>of achilles</p>
+          <p class="book-author">madeline miller</p>
+        </div>
+      </div>
+
+      <div class="book-doodle shelf-3">
+        <div class="book-spine"></div>
+        <div class="book-cover cover-wonder">
+          <img class="book-cover-img" src="assets/wonder.png" alt="">
+          <p class="book-title">wonder</p>
+          <p class="book-author">r.j. palacio</p>
+        </div>
+      </div>
+
+      <div class="book-doodle shelf-4">
+        <div class="book-spine"></div>
+        <div class="book-cover cover-pieces">
+          <img class="book-cover-img" src="assets/pieces.png" alt="">
+          <p class="book-title strike-title">girl<br>in<br>pieces</p>
+          <p class="book-author">kathleen glasgow</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ON REPEAT ===================== -->
+<section id="music" class="section grid-paper-soft">
+  <div class="tape tape-4"></div>
+  <div class="tape tape-6"></div>
+  <div class="washi washi-3"></div>
+  <div class="washi washi-4"></div>
+  <div class="tape tape-7"></div>
+
+  <div class="section-inner">
+    <div class="music-intro">
+      <h2 class="section-title tilt-r">on repeat</h2>
+      <p>If a RoleModel song comes on, everything else pauses. It's basically the soundtrack to her whole year — the vibes, the lyrics, all of it. Press a record below for a preview.</p>
+      <a class="pill-link" href="https://open.spotify.com/artist/1dy5WNgIKQU6ezkpZs4y8z" target="_blank" rel="noopener">go listen →</a>
+    </div>
+  </div>
+
+  <div class="vinyl-row" id="vinyl-row">
+    <button class="vinyl-item pos-up" data-track="2J051fjLklkoPbzOoTAACZ" data-title="Sally, When The Wine Runs Out — Role Model" aria-label="Preview Sally, When The Wine Runs Out">
+      <div class="vinyl"><div class="vinyl-label"><img src="assets/sally.png" alt=""></div></div>
+    </button>
+    <button class="vinyl-item pos-down" data-track="2jAQzmhwPPcc6jBx4w664w" data-title="Deeply Still In Love — Role Model" aria-label="Preview Deeply Still In Love">
+      <div class="vinyl"><div class="vinyl-label"><img src="assets/deeply.png" alt=""></div></div>
+    </button>
+    <button class="vinyl-item pos-up" data-track="4mDTqEqt0QHQFPNkz8eHjr" data-title="Writing's On The Wall — Role Model" aria-label="Preview Writing's On The Wall">
+      <div class="vinyl"><div class="vinyl-label"><img src="assets/wall.png" alt=""></div></div>
+    </button>
+    <button class="vinyl-item pos-down" data-track="1170VohRSx6GwE6QDCHPPH" data-title="Kilby Girl — The Backseat Lovers" aria-label="Preview Kilby Girl">
+      <div class="vinyl"><div class="vinyl-label"><img src="assets/kilby.png" alt=""></div></div>
+    </button>
+    <button class="vinyl-item pos-up" data-track="1gvnmAf6mXyT8dsZmv5y70" data-title="life is funny — Role Model" aria-label="Preview life is funny">
+      <div class="vinyl"><div class="vinyl-label"><img src="assets/life.png" alt=""></div></div>
+    </button>
+    <button class="vinyl-item pos-down" data-track="6Op1AAvS0Jb3Gbom92zadJ" data-title="Look At That Woman — Role Model" aria-label="Preview Look At That Woman">
+      <div class="vinyl"><div class="vinyl-label"><img src="assets/woman.png" alt=""></div></div>
+    </button>
+    <button class="vinyl-item pos-up" data-track="5FKau0mX86PvGu3EbWn7qX" data-title="Blush — Taba Chake" aria-label="Preview Blush">
+      <div class="vinyl"><div class="vinyl-label"><img src="assets/blush.png" alt=""></div></div>
+    </button>
+  </div>
+
+  <div class="section-inner">
+    <p class="now-playing" id="now-playing">press a record to preview it 🎧</p>
+    <div class="spotify-embed-wrap now-playing-embed">
+      <iframe id="now-playing-iframe" title="Now playing preview" src="" width="100%" height="80" frameborder="0" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GILMORE GIRLS ===================== -->
+<section id="show" class="section">
+  <div class="section-inner">
+    <h2 class="section-title tilt-l center">stars hollow resident (unofficially)</h2>
+    <p class="section-sub center">Gilmore Girls has been rewatched more times than either of us can count. The coffee-to-dialogue ratio is unmatched.</p>
+
+    <div class="team-poll">
+      <p class="team-prompt">the debate that ends friendships:</p>
+      <div class="team-buttons">
+        <button class="team-btn" data-team="dean">team dean</button>
+        <button class="team-btn" data-team="jess">team jess</button>
+        <button class="team-btn" data-team="logan">team logan</button>
+      </div>
+      <p class="team-result" id="team-result"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LANTERN NIGHT SCENE ===================== -->
+<section id="flower-moment" class="section flower-section">
+  <div class="flower-sky" aria-hidden="true"></div>
+  <div class="stars-extra" aria-hidden="true">
+    <span class="sparkle-star" style="top:8%; left:12%; --size:16px; --delay:0s;"></span>
+    <span class="sparkle-star" style="top:14%; left:68%; --size:12px; --delay:0.6s;"></span>
+    <span class="sparkle-star" style="top:26%; left:42%; --size:20px; --delay:1.2s;"></span>
+    <span class="sparkle-star" style="top:9%; left:38%; --size:10px; --delay:1.8s;"></span>
+    <span class="sparkle-star" style="top:34%; left:8%; --size:14px; --delay:0.3s;"></span>
+    <span class="sparkle-star" style="top:20%; left:58%; --size:11px; --delay:2.1s;"></span>
+    <span class="sparkle-star" style="top:42%; left:24%; --size:17px; --delay:0.9s;"></span>
+    <span class="sparkle-star" style="top:6%; left:55%; --size:13px; --delay:1.5s;"></span>
+    <span class="sparkle-star" style="top:30%; left:88%; --size:12px; --delay:2.4s;"></span>
+  </div>
+  <div class="moon-wrap" aria-hidden="true">
+    <svg class="moon" viewBox="0 0 200 200" width="130" height="130">
+      <defs>
+        <radialGradient id="moon-glow" cx="50%" cy="45%" r="60%">
+          <stop offset="0%" stop-color="#FFF6D8"/>
+          <stop offset="55%" stop-color="#FFE9A0"/>
+          <stop offset="100%" stop-color="#F2C14E"/>
+        </radialGradient>
+      </defs>
+      <circle cx="100" cy="100" r="90" fill="url(#moon-glow)"/>
+      <circle cx="65" cy="70" r="14" fill="#E0B45A" opacity="0.55"/>
+      <circle cx="120" cy="55" r="9" fill="#E0B45A" opacity="0.5"/>
+      <circle cx="135" cy="110" r="16" fill="#E0B45A" opacity="0.5"/>
+      <circle cx="80" cy="130" r="11" fill="#E0B45A" opacity="0.55"/>
+      <circle cx="105" cy="95" r="6" fill="#E0B45A" opacity="0.45"/>
+      <circle cx="55" cy="115" r="6" fill="#E0B45A" opacity="0.45"/>
+    </svg>
+  </div>
+
+  <div class="section-inner flower-inner">
+    <h2 class="section-title flower-title">a little magic, just because</h2>
+    <p class="flower-sub">for the girl who still tears up at the floating lights scene</p>
+    <p class="flower-caption handwritten">make a wish before they drift out of sight</p>
+  </div>
+
+  <div class="river-scene" id="river-scene">
+    <div class="river" id="river">
+      <div class="wave-layer wave-1"></div>
+      <div class="wave-layer wave-2"></div>
+      <div class="wave-layer wave-3"></div>
+      <div class="wave-layer wave-4"></div>
+      <div class="river-glints"></div>
+    </div>
+    <div class="boat-wrap">
+      <svg class="boat" viewBox="0 0 460 200" width="340" height="148" aria-hidden="true">
+        <defs>
+          <linearGradient id="hull-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#EFB25F"/>
+            <stop offset="55%" stop-color="#D9903C"/>
+            <stop offset="100%" stop-color="#B5702E"/>
+          </linearGradient>
+        </defs>
+
+        <ellipse cx="235" cy="172" rx="200" ry="14" fill="#0c1830" opacity="0.35"/>
+
+        <!-- hull -->
+        <path d="M15 120 C20 96,48 74,80 68 L390 68 C415 70,434 80,442 96 C446 104,446 112,442 120 C434 136,415 146,390 148 L80 148 C48 142,20 122,15 120 Z" fill="url(#hull-grad)" stroke="#3E2A18" stroke-width="2.5"/>
+        <path d="M80 68 C48 74,20 96,15 120" fill="none" stroke="#F6D8A0" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+
+        <!-- plank stripes -->
+        <path d="M30 100 C60 92,120 88,230 88 C340 88,400 92,430 100" fill="none" stroke="#8A5A32" stroke-width="2.5" opacity="0.55"/>
+        <path d="M25 115 C60 108,150 104,230 104 C310 104,400 108,435 115" fill="none" stroke="#8A5A32" stroke-width="2.5" opacity="0.55"/>
+        <path d="M30 130 C70 124,150 120,230 120 C310 120,390 124,428 130" fill="none" stroke="#6B4423" stroke-width="2.5" opacity="0.5"/>
+
+        <!-- stern transom -->
+        <path d="M432 58 L454 63 L454 97 L432 92 Z" fill="#8A5A32" stroke="#3E2A18" stroke-width="2"/>
+
+        <!-- interior -->
+        <path d="M80 78 C110 72,350 72,380 78 C402 84,412 94,406 104 C412 114,410 124,402 132 C382 142,360 146,335 146 L105 146 C75 146,52 140,44 130 C38 120,40 108,48 98 C58 86,68 80,80 78 Z" fill="#F0C79A"/>
+        <path d="M80 78 C110 72,350 72,380 78" fill="none" stroke="#C9925A" stroke-width="3" opacity="0.6"/>
+
+        <!-- figure A: black hair, leaning right toward figure B -->
+        <g class="passenger">
+          <ellipse cx="190" cy="116" rx="22" ry="20" fill="#3E5C43"/>
+          <circle cx="189" cy="82" r="13" fill="#221B29"/>
+          <circle cx="193" cy="89" r="9.5" fill="#E8B48A"/>
+          <ellipse cx="201" cy="90" rx="2.8" ry="2.2" fill="#E8B48A"/>
+        </g>
+
+        <!-- figure B: long black hair with purple streaks, leaning left toward figure A -->
+        <g class="passenger">
+          <ellipse cx="270" cy="114" rx="23" ry="21" fill="#B5342C"/>
+          <path d="M256 72 C247 80,244 96,248 112 L259 112 C257 98,257 84,262 74 Z" fill="#221B29"/>
+          <path d="M284 72 C293 80,296 96,292 112 L281 112 C283 98,283 84,278 74 Z" fill="#221B29"/>
+          <circle cx="269" cy="76" r="13" fill="#221B29"/>
+          <path d="M251 84 C249 94,249 104,251 111" fill="none" stroke="#9B59B6" stroke-width="2" opacity="0.85" stroke-linecap="round"/>
+          <path d="M289 84 C291 94,291 104,289 111" fill="none" stroke="#9B59B6" stroke-width="2" opacity="0.85" stroke-linecap="round"/>
+          <path d="M263 66 C266 70,268 74,268 78" fill="none" stroke="#B57EDC" stroke-width="1.6" opacity="0.8" stroke-linecap="round"/>
+          <circle cx="265" cy="83" r="9.5" fill="#F0C29B"/>
+          <ellipse cx="257" cy="84" rx="2.8" ry="2.2" fill="#F0C29B"/>
+        </g>
+
+        <circle cx="229" cy="98" r="6.5" fill="#FFE9A8" class="boat-lamp"/>
+
+        <!-- oar resting across the oarlock -->
+        <circle cx="330" cy="84" r="7" fill="#D8D8D8" stroke="#8A8A8A" stroke-width="1.5"/>
+        <g transform="rotate(32 330 84)">
+          <rect x="205" y="80.5" width="225" height="7" rx="3" fill="#8A5A32" stroke="#3E2A18" stroke-width="1"/>
+          <ellipse cx="418" cy="84" rx="16" ry="8" fill="#9C6B3E" stroke="#3E2A18" stroke-width="1"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="lantern-field" id="lantern-field"></div>
+</section>
+
+<!-- ===================== PHOTO MIX ===================== -->
+<section id="photos" class="section grid-paper">
+  <div class="section-inner">
+    <h2 class="section-title tilt-r center">this could be us (it is us)</h2>
+    <p class="section-sub center">the whole messy, chaotic, unserious archive</p>
+    <div class="photo-collage">
+      <div class="polaroid p-collage size-lg rot-1"><div class="polaroid-photo"><img src="assets/exhibitA.png" alt="Exhibit A"></div><p>exhibit a</p></div>
+      <div class="polaroid p-collage size-xl rot-2"><div class="polaroid-photo"><img src="assets/exhibitB.png" alt="Exhibit B"></div><p>exhibit b</p></div>
+      <div class="polaroid p-collage size-md rot-3"><div class="polaroid-photo"><img src="assets/chaos.png" alt="Chaos, always"></div><p>chaos, always</p></div>
+      <div class="polaroid p-collage size-lg rot-4"><div class="polaroid-photo"><img src="assets/element.png" alt="Her, in her element"></div><p>her, in her element</p></div>
+      <div class="polaroid p-collage size-xl rot-5"><div class="polaroid-photo"><img src="assets/unserious.png" alt="Unserious behaviour"></div><p>unserious behaviour</p></div>
+      <div class="polaroid p-collage size-md rot-6"><div class="polaroid-photo"><img src="assets/iconic.png" alt="Iconic, honestly"></div><p>iconic, honestly</p></div>
+      <div class="polaroid p-collage size-lg rot-7"><div class="polaroid-photo"><img src="assets/nocontext.png" alt="No context needed"></div><p>no context needed</p></div>
+      <div class="polaroid p-collage size-md rot-8"><div class="polaroid-photo"><img src="assets/vibes.png" alt="10/10 vibes"></div><p>10/10 vibes</p></div>
+      <div class="polaroid p-collage size-xl rot-2"><div class="polaroid-photo"><img src="assets/gcfav.png" alt="The group chat's fave"></div><p>the group chat's fave</p></div>
+      <div class="polaroid p-collage size-lg rot-6"><div class="polaroid-photo"><img src="assets/wild.png" alt="Caught in the wild"></div><p>caught in the wild</p></div>
+      <div class="polaroid p-collage size-md rot-1"><div class="polaroid-photo"><img src="assets/peak.png" alt="Peak chaos"></div><p>peak chaos</p></div>
+      <div class="polaroid p-collage size-lg rot-3"><div class="polaroid-photo"><img src="assets/wholemood.png" alt="Lowkey a whole mood"></div><p>lowkey a whole mood</p></div>
+      <div class="polaroid p-collage size-md rot-5" style="z-index:6;"><div class="polaroid-photo"><img src="assets/notfunny.png" alt="Never not funny"></div><p>never not funny</p></div>
+      <div class="polaroid p-collage size-xl rot-8"><div class="polaroid-photo"><img src="assets/archive.png" alt="The whole archive, honestly"></div><p>the whole archive, honestly</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== NOTES FROM HER PEOPLE ===================== -->
+<section id="notes" class="section">
+  <div class="section-inner">
+    <h2 class="section-title tilt-l center">notes from her people</h2>
+    <p class="section-sub center">everyone who loves her had something to say</p>
+    <p class="song-caption handwritten center">the soundtrack for this part: "I Think I Like When It Rains" — WILLIS</p>
+    <div class="spotify-embed-wrap">
+      <iframe title="I Think I Like When It Rains by WILLIS on Spotify" src="https://open.spotify.com/embed/track/5S5u0EWtlblH00iTNExZ6X?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+
+    <div class="notes-carousel">
+      <button class="carousel-arrow left" id="notes-prev" aria-label="previous note">‹</button>
+
+      <div class="notes-track" id="notes-track">
+        <!-- Note cards: duplicate this block per friend, swap photo/name/message -->
+        <div class="note-card">
+          <div class="polaroid p-note">
+            <div class="polaroid-photo ph-slot" data-slot="note-1"><span>photo of<br>shruti + friend</span></div>
+            <p class="polaroid-caption">— friend's name</p>
+          </div>
+          <p class="note-message">"Add this friend's message about Shruti here — swap this placeholder text once you send it over."</p>
+        </div>
+
+        <div class="note-card">
+          <div class="polaroid p-note">
+            <div class="polaroid-photo ph-slot" data-slot="note-2"><span>photo of<br>shruti + friend</span></div>
+            <p class="polaroid-caption">— friend's name</p>
+          </div>
+          <p class="note-message">"Second friend's note goes here — same deal, just placeholder for now."</p>
+        </div>
+
+        <div class="note-card">
+          <div class="polaroid p-note">
+            <div class="polaroid-photo ph-slot" data-slot="note-3"><span>photo of<br>shruti + friend</span></div>
+            <p class="polaroid-caption">— friend's name</p>
+          </div>
+          <p class="note-message">"Third one lives here. Add as many note-card blocks as you have friends."</p>
+        </div>
+      </div>
+
+      <button class="carousel-arrow right" id="notes-next" aria-label="next note">›</button>
+    </div>
+    <div class="notes-dots" id="notes-dots"></div>
+  </div>
+</section>
+
+<!-- ===================== PARTY DETAILS (real invite) ===================== -->
+<section id="party" class="section grid-paper">
+  <div class="tape tape-5"></div>
+  <div class="section-inner party-inner">
+    <h2 class="section-title center">you're invited, obviously</h2>
+    <div class="invite-frame">
+      <img src="assets/invite.png" alt="Shruti's birthday diner invite — Tuesday, August 18th, 3:30 PM onwards, C-2/2 Court Lane, besides LG Secretariat House. RSVP by Aug 17th, booth seating limited." class="invite-image">
+    </div>
+    <p class="rsvp-note">RSVP by Aug 17th · booth seating is limited!</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>made with too much love (and too many browser tabs) for shruti's 20th</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
