@@ -55,19 +55,36 @@
   document.head.appendChild(style);
 })();
 
-// ============ COUNTDOWN ============
+// ============ COUNTDOWN + SCROLL LOCK (unlocks at 12AM IST Aug 17) ============
 (function countdown(){
-  const target = new Date('2026-08-17T00:00:00');
+  // Set this to true to preview the full site early (bypasses the lock).
+  // Set it back to false before the real launch so the lock works normally again.
+  const FORCE_UNLOCKED = false;
+
+  // 00:00:00 IST on Aug 17 2026 = 18:30:00 UTC on Aug 16 2026. Using an explicit
+  // offset means this is correct regardless of the visitor's own device timezone.
+  const target = new Date('2026-08-17T00:00:00+05:30');
   const els = {
     d: document.getElementById('cd-days'),
     h: document.getElementById('cd-hours'),
     m: document.getElementById('cd-mins'),
     s: document.getElementById('cd-secs'),
   };
+
+  function setLocked(locked){
+    document.documentElement.classList.toggle('site-locked', locked);
+  }
+
+  // lock immediately (before first tick) if we're still counting down, so there's no flash of scrollable content
+  setLocked(!FORCE_UNLOCKED && new Date() < target);
+
   if(!els.d) return;
   function tick(){
     const now = new Date();
-    let diff = Math.max(0, target - now);
+    let diff = target - now;
+    const unlocked = FORCE_UNLOCKED || diff <= 0;
+    if(unlocked) diff = 0;
+    setLocked(!unlocked);
     const days = Math.floor(diff / 86400000);
     const hours = Math.floor((diff % 86400000) / 3600000);
     const mins = Math.floor((diff % 3600000) / 60000);

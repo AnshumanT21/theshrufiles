@@ -33,6 +33,13 @@ body{
   cursor: none;
 }
 
+/* while locked (before the countdown hits 0), only the hero is reachable */
+html.site-locked, html.site-locked body{
+  height: 100%;
+  overflow: hidden;
+}
+html.site-locked .scroll-cue{ opacity: 0; pointer-events: none; }
+
 a{ color: inherit; }
 
 /* hide the moon's Spotify player completely — clip to zero size so nothing can render visibly, regardless of what Spotify's own script sets on its injected iframe. transform + contain force this element to become the containing block for any fixed-position child, which is required to actually clip position:fixed content (plain overflow:hidden alone cannot). */
