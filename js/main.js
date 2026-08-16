@@ -256,6 +256,69 @@ document.querySelectorAll('[data-flip]').forEach(card => {
   });
 })();
 
+// ============ RAIN + PUDDLES (notes section) ============
+(function rainAndPuddles(){
+  const section = document.getElementById('notes');
+  const field = document.getElementById('rain-field');
+  if(!section || !field) return;
+
+  function spawnRaindrop(){
+    const drop = document.createElement('div');
+    drop.className = 'raindrop';
+    const x = -5 + Math.random() * 90; // start a bit left so wind carries them rightward across the section
+    const fall = section.offsetHeight + 60;
+    const wind = 50 + Math.random() * 40; // rightward drift
+    const duration = 0.7 + Math.random() * 0.5;
+    drop.style.left = x + '%';
+    drop.style.setProperty('--fall', fall + 'px');
+    drop.style.setProperty('--wind', wind + 'px');
+    drop.style.animationDuration = duration + 's';
+    field.appendChild(drop);
+    setTimeout(() => drop.remove(), duration * 1000 + 100);
+  }
+
+  let started = false;
+  function start(){
+    if(started) return;
+    started = true;
+    for(let i=0;i<12;i++){ setTimeout(spawnRaindrop, i*40); }
+    setInterval(spawnRaindrop, 55);
+  }
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if(entry.isIntersecting) start(); });
+  }, { threshold: 0.05 });
+  obs.observe(section);
+
+  // splash on puddle click
+  function spawnSplash(wrap){
+    for(let i=0;i<2;i++){
+      setTimeout(() => {
+        const ring = document.createElement('div');
+        ring.className = 'splash-ring';
+        wrap.appendChild(ring);
+        setTimeout(() => ring.remove(), 650);
+      }, i * 90);
+    }
+    for(let i=0;i<8;i++){
+      const drop = document.createElement('div');
+      drop.className = 'splash-droplet';
+      const angle = Math.random() * Math.PI - Math.PI/2; // upward-ish spread
+      const dist = 18 + Math.random() * 26;
+      const dx = Math.cos(angle) * dist;
+      const dy = -Math.abs(Math.sin(angle) * dist) - 10;
+      drop.style.setProperty('--dx', dx + 'px');
+      drop.style.setProperty('--dy', dy + 'px');
+      wrap.appendChild(drop);
+      setTimeout(() => drop.remove(), 600);
+    }
+  }
+
+  document.querySelectorAll('.puddle-wrap').forEach(wrap => {
+    wrap.addEventListener('click', () => spawnSplash(wrap));
+  });
+})();
+
 // ============ LANTERN RIVER SCENE ============
 (function lanternRiver(){
   const scene = document.getElementById('river-scene');
