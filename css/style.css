@@ -265,6 +265,7 @@ button{ font-family: inherit; cursor: none; }
   color: var(--ink);
   margin: 10px 0 0;
 }
+.caption-big{ font-size: 34px !important; }
 .polaroid-photo{
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -289,7 +290,7 @@ button{ font-family: inherit; cursor: none; }
 
 .p-hero.p1{ position:absolute; top: 16%; left: 3%; transform: rotate(-9deg); width: 260px; }
 .p-hero.p2{ position:absolute; bottom: 6%; right: 3%; transform: rotate(7deg); width: 240px; }
-.p-about{ transform: rotate(4deg); justify-self:center; }
+.p-about{ transform: rotate(4deg); justify-self:center; width: 340px; }
 .p-scatter{ position:absolute; }
 .p-scatter.r1{ top: 0; left: 4%; transform: rotate(-8deg); }
 .p-scatter.r2{ top: 4%; left: 30%; transform: rotate(6deg); z-index: 4; }
@@ -953,6 +954,7 @@ button{ font-family: inherit; cursor: none; }
 .note-text{ flex: 1; }
 .note-message{ font-family: var(--font-hand); font-size: 24px; line-height: 1.45; color: var(--ink); margin: 0; }
 .note-signature{ font-family: var(--font-hand); font-size: 20px; color: var(--red-dark); margin: 14px 0 0; }
+.note-ps{ font-family: var(--font-hand); font-size: 17px; color: var(--ink); opacity: 0.75; margin: 4px 0 0; }
 
 .carousel-arrow{
   position: relative;

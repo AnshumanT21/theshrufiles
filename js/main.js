@@ -59,7 +59,7 @@
 (function countdown(){
   // Set this to true to preview the full site early (bypasses the lock).
   // Set it back to false before the real launch so the lock works normally again.
-  const FORCE_UNLOCKED = false;
+  const FORCE_UNLOCKED = true;
 
   // 00:00:00 IST on Aug 17 2026 = 18:30:00 UTC on Aug 16 2026. Using an explicit
   // offset means this is correct regardless of the visitor's own device timezone.
