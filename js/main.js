@@ -324,12 +324,19 @@ document.querySelectorAll('[data-flip]').forEach(card => {
   });
   const dots = Array.from(dotsWrap.children);
 
+  function updateHeight(){
+    // measure the active card's natural height and size the track to match
+    track.style.height = cards[index].scrollHeight + 'px';
+  }
+
   function render(){
     cards.forEach((c, i) => c.classList.toggle('is-active', i === index));
     dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+    updateHeight();
   }
   prevBtn.addEventListener('click', () => { index = (index - 1 + cards.length) % cards.length; render(); });
   nextBtn.addEventListener('click', () => { index = (index + 1) % cards.length; render(); });
+  window.addEventListener('resize', updateHeight);
   render();
 })();
 

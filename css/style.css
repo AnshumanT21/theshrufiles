@@ -425,32 +425,25 @@ button{ font-family: inherit; cursor: none; }
 .shelf-4{ transform: rotate(4deg); }
 .book-spine{ width: 12px; background: var(--red-dark); flex-shrink: 0; }
 .book-cover{
-  flex:1; color: white; display:flex; flex-direction:column; justify-content:center; align-items:center;
-  padding: 16px; text-align:center; gap: 6px;
+  flex:1;
+  padding: 0;
+  overflow: hidden;
 }
 .cover-agggtm{ background: linear-gradient(160deg, var(--red), var(--red-dark)); }
 .cover-achilles{ background: linear-gradient(160deg, #3EC6C0, #1F8983); }
 .cover-wonder{ background: linear-gradient(160deg, #6FCBEF, #4FB8E0); }
 .cover-pieces{ background: linear-gradient(160deg, #F3D9CE, #E8BFAE); }
 
-.book-eyebrow{ font-size: 10px; letter-spacing: 1.5px; text-transform:uppercase; opacity:0.85; margin:0 0 4px; }
-.book-title{ font-family: var(--font-heading); font-weight:700; font-size: 16px; line-height:1.25; margin:0; }
-.book-author{ font-family: var(--font-hand); font-size: 15px; opacity: 0.9; margin: 2px 0 0; }
-.cover-icon{ margin-bottom: 4px; }
 .book-cover-img{
-  width: 56px; height: 56px;
-  border-radius: 8px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 8px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-  border: 2px solid rgba(255,255,255,0.6);
+  display: block;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
 }
-.cover-pieces .book-title{ color: #B5342C; }
-.strike-title{ position: relative; font-size: 18px; letter-spacing: 1px; }
-.strike-title::before, .strike-title::after{ content:""; position:absolute; left: -8px; right: -8px; height: 2px; background: #B5342C; opacity: 0.75; }
-.strike-title::before{ top: 32%; transform: rotate(-2deg); }
-.strike-title::after{ top: 68%; transform: rotate(1.5deg); }
-.cover-pieces .book-author{ color: #6B4423; }
 
 .text-block p{ font-size: 18px; line-height: 1.6; }
 
@@ -771,17 +764,29 @@ button{ font-family: inherit; cursor: none; }
 }
 
 /* ============ REAL INVITE ============ */
+.party-section{ min-height: 100vh; display:flex; align-items:center; justify-content:center; }
 .invite-frame{
-  max-width: 420px;
   margin: 30px auto 0;
   transform: rotate(-2deg);
-  box-shadow: 0 16px 34px rgba(58,42,34,0.28);
-  border-radius: 4px;
+  box-shadow: 0 20px 44px rgba(58,42,34,0.3);
+  border-radius: 6px;
   overflow: hidden;
   background: white;
-  padding: 10px;
+  padding: 14px;
+  display: inline-block;
 }
-.invite-image{ width: 100%; display:block; border-radius: 2px; }
+.invite-image{
+  display:block;
+  border-radius: 3px;
+  height: 78vh;
+  width: auto;
+  max-width: 88vw;
+  object-fit: contain;
+}
+
+@media (max-width: 700px){
+  .invite-image{ height: auto; width: 88vw; max-width: 420px; }
+}
 
 /* ============ SPOTIFY EMBED ============ */
 .song-caption{ margin-top: -12px; margin-bottom: 18px; font-size: 22px; }
@@ -793,26 +798,84 @@ button{ font-family: inherit; cursor: none; }
   box-shadow: 4px 4px 0 var(--red-dark);
 }
 
-/* ============ NOTES CAROUSEL ============ */
-.notes-carousel{ display:flex; align-items:center; gap: 16px; max-width: 480px; margin: 0 auto; }
-.notes-track{ overflow:hidden; flex:1; position: relative; height: 380px; }
+/* ============ NOTES CAROUSEL (photo left, message right) ============ */
+.notes-carousel{ display:flex; align-items:flex-start; gap: 20px; max-width: 1080px; margin: 0 auto; }
+.notes-track{ overflow:hidden; flex:1; position: relative; min-height: 340px; transition: height 0.3s ease; }
 .note-card{
-  position:absolute; inset:0;
+  position:absolute; top:0; left:0; right:0;
   opacity:0; transform: translateX(40px);
   transition: opacity 0.4s ease, transform 0.4s ease;
   pointer-events:none;
-  text-align:center;
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  text-align: left;
 }
 .note-card.is-active{ opacity:1; transform: translateX(0); pointer-events:auto; }
-.note-message{ font-family: var(--font-hand); font-size: 21px; line-height: 1.4; color: var(--ink); max-width: 340px; margin: 0 auto; }
+
+.note-photo-wrap{
+  position: relative;
+  flex-shrink: 0;
+  width: 260px;
+  background: white;
+  padding: 14px 14px 22px;
+  border-radius: 22px;
+  box-shadow: 0 14px 30px rgba(58,42,34,0.25);
+}
+.note-photo{
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--pink) 0%, var(--matcha-light) 100%);
+  display:flex; align-items:center; justify-content:center;
+  color: rgba(58,42,34,0.55);
+  font-family: var(--font-body);
+  font-size: 13px;
+  text-align:center;
+  border: 1px dashed rgba(58,42,34,0.35);
+}
+.note-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+.note-tape{
+  position:absolute;
+  width: 80px; height: 30px;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.6), rgba(255,255,255,0.6) 4px, rgba(242,193,78,0.55) 4px, rgba(242,193,78,0.55) 8px);
+  z-index: 3;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+.note-tape-l{ top: -14px; left: -18px; transform: rotate(-30deg); }
+.note-tape-r{ top: -14px; right: -18px; transform: rotate(30deg); background: repeating-linear-gradient(45deg, rgba(255,255,255,0.6), rgba(255,255,255,0.6) 4px, rgba(226,72,61,0.4) 4px, rgba(226,72,61,0.4) 8px); }
+
+.note-text{ flex: 1; }
+.note-message{ font-family: var(--font-hand); font-size: 24px; line-height: 1.45; color: var(--ink); margin: 0; }
+.note-signature{ font-family: var(--font-hand); font-size: 20px; color: var(--red-dark); margin: 14px 0 0; }
+
 .carousel-arrow{
+  position: relative;
+  z-index: 2;
   background: white; border: 2px solid var(--red); color: var(--red-dark);
   width: 40px; height: 40px; border-radius: 50%; font-size: 20px; flex-shrink:0;
   box-shadow: 2px 2px 0 var(--red-dark);
+  align-self: center;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0; margin: 0; line-height: 1;
+  box-sizing: border-box;
+}
+.carousel-arrow::before{
+  content: "";
+  position: absolute;
+  inset: -8px;
 }
 .notes-dots{ display:flex; gap: 8px; justify-content:center; margin-top: 18px; }
 .notes-dots span{ width: 8px; height: 8px; border-radius: 50%; background: rgba(181,52,44,0.25); transition: background 0.2s ease; }
 .notes-dots span.is-active{ background: var(--red); }
+
+@media (max-width: 700px){
+  .note-card{ flex-direction: column; text-align:center; gap: 20px; }
+  .note-photo-wrap{ width: 200px; margin: 0 auto; }
+  .notes-track{ min-height: 480px; }
+}
 
 /* ============ PARTY DETAILS ============ */
 .party-inner{ text-align:center; }
