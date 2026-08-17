@@ -33,7 +33,7 @@ body{
   cursor: none;
 }
 
-/* while locked (before the countdown hits 0), only the hero is reachable */
+/* while the countdown lock is active, block scrolling */
 html.site-locked, html.site-locked body{
   height: 100%;
   overflow: hidden;
@@ -897,7 +897,7 @@ button{ font-family: inherit; cursor: none; }
 .note-sticker{ display:block; }
 .note-sticker-tr{
   position: absolute;
-  top: 220px; right: 15%;
+  top: 220px; right: 8%;
   width: 130px; height: auto;
   transform: rotate(8deg);
   z-index: 5;
@@ -905,6 +905,7 @@ button{ font-family: inherit; cursor: none; }
 .note-sticker-below-photo{
   width: 160px; height: auto;
   transform: rotate(-6deg);
+  margin-top: 16px;
 }
 .note-sticker-inline{
   width: 22px; height: 22px;
