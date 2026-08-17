@@ -42,7 +42,7 @@ export default async function handler(request) {
   const headers = new Headers();
   headers.append(
     'Set-Cookie',
-    `shru_auth=${token}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=31536000`
+    `shru_auth=${token}; Path=/; Secure; SameSite=Lax; Max-Age=30`
   );
   headers.append('Location', '/');
   return new Response(null, { status: 303, headers });

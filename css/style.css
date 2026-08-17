@@ -897,7 +897,7 @@ button{ font-family: inherit; cursor: none; }
 .note-sticker{ display:block; }
 .note-sticker-tr{
   position: absolute;
-  top: 220px; right: 8%;
+  top: 220px; right: 15%;
   width: 130px; height: auto;
   transform: rotate(8deg);
   z-index: 5;

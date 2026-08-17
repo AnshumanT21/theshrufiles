@@ -470,5 +470,10 @@
 
 <script src="js/main.js"></script>
 <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+<script>
+  // The site has fully loaded, so this browser has proven it knew the password.
+  // Immediately clear the access cookie so any refresh or new tab requires it again.
+  document.cookie = "shru_auth=; Path=/; Max-Age=0; SameSite=Lax; Secure";
+</script>
 </body>
 </html>
